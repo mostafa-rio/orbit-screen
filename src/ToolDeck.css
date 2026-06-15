@@ -1,0 +1,155 @@
+.tool-deck-container {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  height: 100vh; /* The window is 65px tall, so 100vh fills it */
+  background: rgba(28, 28, 31, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 32px;
+  padding: 0 16px;
+  gap: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  -webkit-app-region: drag; /* make whole bar draggable */
+  overflow: hidden;
+}
+
+.deck-btn-close {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: white;
+  color: #1c1c1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  -webkit-app-region: no-drag;
+  flex-shrink: 0;
+}
+
+.deck-btn-close:hover {
+  background: #f4f4f5;
+  transform: scale(1.05);
+}
+
+.deck-section {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.deck-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 8px;
+}
+
+.source-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  border-radius: 12px;
+  -webkit-app-region: no-drag;
+  min-width: 64px;
+}
+
+.source-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.source-btn.active {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.source-btn span {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.dropdown-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 8px 12px;
+  border-radius: 12px;
+  -webkit-app-region: no-drag;
+  position: relative;
+}
+
+.dropdown-label:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.native-select {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 0.85rem;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  width: auto;
+}
+
+.settings-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: 50%;
+  -webkit-app-region: no-drag;
+}
+
+.settings-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.record-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  gap: 6px;
+  -webkit-app-region: no-drag;
+  flex-shrink: 0;
+}
+
+.record-btn:hover {
+  background: var(--accent-hover);
+}
+
+.record-btn.recording {
+  background: var(--danger);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
